@@ -5,19 +5,19 @@ def random
   ('0'..'9').to_a.shuffle[0..7].join.to_f / 1000000
 end
 
+
+
 content = content.split(" ")
 
 new_content = []
 
-# ADD
+# ADD 5 dim
 content.each_with_index { | elem , index |
   new_content  << elem
   if index % 4 == 3
-    new_content << random.to_s
-    new_content << random.to_s
-    new_content << random.to_s
-    new_content << random.to_s
-    new_content << random.to_s
+    5.times do
+      new_content << random.to_s
+    end
   end
 }
 
@@ -33,4 +33,3 @@ File.open("new_edge.txt", "w") { |file|
   }
 
 }
-
